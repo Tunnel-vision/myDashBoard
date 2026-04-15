@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0f0f1a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #00d9ff44;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-bg-panel rounded-lg border border-white/10 p-4 overflow-hidden;
+  }
+  .panel-title {
+    @apply text-xs font-semibold uppercase tracking-widest text-accent-cyan mb-3;
+  }
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+  .status-connected {
+    @apply bg-accent-green shadow-[0_0_6px_#00ff88];
+  }
+  .status-reconnecting {
+    @apply bg-accent-yellow shadow-[0_0_6px_#ffd600] animate-pulse;
+  }
+  .status-disconnected {
+    @apply bg-accent-red shadow-[0_0_6px_#ff4444];
+  }
+}
